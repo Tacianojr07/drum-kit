@@ -25,7 +25,7 @@ main {
 }
 
 .container {
-    width: 90vw;
+    width: 80vw;
     height: 150px;
     margin: 0 auto; /*colcoando a div container no meio */ 
     display: flex;
