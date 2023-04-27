@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(img/back.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif; /*colocando a imagem no back*/
+}
+
+main {
+    display: flex;
+    flex-direction: column; /*centralizou o titulo e a div */
+}
+
+.title {
+    color: yellow;
+    margin: 20vw auto;
+    font-size: calc(4vw + 15px); /*editando texto*/
+    text-shadow: 0 0 10px black,0 0 10px black,0 0 10px black;
+}
+
+.container {
+    width: 90vw;
+    height: 150px;
+    margin: 0 auto; /*colcoando a div container no meio */ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+}
+
+.key {
+    display: flex;
+    height: 150px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000BB;
+    color: white; /* alinhando e modificando as divs dentro do conatoner*/
+    font-size: calc(4vh + 20px);
+    border: 3px solid white;
+    user-select: none;
+    cursor: pointer;
+}
