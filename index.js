@@ -24,4 +24,8 @@ const criarDiv = (texto) => {
     document.getElementById('container').appendChild(div);
 }
 
-criarDiv('A');
+const exibir = (sons) => {
+    Object.keys(sons).forEach(criarDiv);
+}
+
+exibir(sons)

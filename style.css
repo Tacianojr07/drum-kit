@@ -19,14 +19,14 @@ main {
 
 .title {
     color: yellow;
-    margin: 20vw auto;
+    margin: 10vw auto;
     font-size: calc(4vw + 15px); /*editando texto*/
     text-shadow: 0 0 10px black,0 0 10px black,0 0 10px black;
 }
 
 .container {
-    width: 80vw;
-    height: 150px;
+    width: 90vw;
+    height: 100px;
     margin: 0 auto; /*colcoando a div container no meio */ 
     display: flex;
     flex-wrap: wrap;
@@ -37,8 +37,8 @@ main {
 
 .key {
     display: flex;
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     align-items: center;
     justify-content: center;
     background-color: #000000BB;
