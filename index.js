@@ -24,8 +24,17 @@ const criarDiv = (texto) => {
     document.getElementById('container').appendChild(div);
 }
 
+// aqui carregamos as keys'LETRAS DO JSON' de forma dinâmica na página HTML
 const exibir = (sons) => {
     Object.keys(sons).forEach(criarDiv);
 }
 
-exibir(sons)
+
+
+//função que captura o click
+const somOn = (click) =>{
+    const letra = click.target.id //com o target.id capturamos o id que clicamos
+}
+
+exibir(sons);
+document.getElementById('container').addEventListener('click', somOn)
