@@ -35,11 +35,25 @@ const tocarSom = (letra) => {
     audio.play();
 }
 
+const ativaEfeito = (letra) => {
+    document.getElementById(letra).classList.add('active')
+}
+
+const removeEfeito = (letra) => {
+    document.getElementById(letra).classList.remove('active');
+}
+
 
 //função que captura o click
 const somOn = (evento) =>{
     const letra = evento.target.id //com o target.id capturamos o id que clicamos
-    tocarSom(letra);
+    const letraPermitida = sons.hasOwnProperty(letra); // validação para que haja um evento só quando uma letra seja criada e quando houver o click no container não exibir erro
+    
+    if (letraPermitida) {
+        ativaEfeito(letra);
+        tocarSom(letra); //se letra permitida for igual a verdadeiro executará o som
+        removeEfeito(letra);
+    }
 }
 
 exibir(sons);
