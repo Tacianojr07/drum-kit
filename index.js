@@ -40,9 +40,12 @@ const ativaEfeito = (letra) => {
 }
 
 const removeEfeito = (letra) => {
-    document.getElementById(letra).classList.remove('active');
+    const div = document.getElementById(letra);
+    const removeActive = () => {
+        div.classList.remove('active');
+        div.addEventListener('transitionend', removeActive)
+    }
 }
-
 
 //função que captura o click
 const somOn = (evento) =>{
