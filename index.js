@@ -2,15 +2,15 @@
 
 //JSON que contém todos os aúdios
 const sons = {
-    'A': 'boom.wav',
-    'S': 'clap.wav',
-    'D': 'hihat.wav',
-    'F': 'kick.wav',
-    'G': 'openhat.wav',
-    'H': 'ride.wav',
-    'J': 'snare.wav',
-    'K': 'tink.wav',
-    'L': 'tom.wav'
+    'A': 'boom.wav.wav',
+    'S': 'clap.wav.wav',
+    'D': 'hihat.wav.wav',
+    'F': 'kick.wav.wav',
+    'G': 'openhat.wav.wav',
+    'H': 'ride.wav.wav',
+    'J': 'snare.wav.wav',
+    'K': 'tink.wav.wav',
+    'L': 'tom.wav.wav'
 }
 
 
@@ -29,11 +29,17 @@ const exibir = (sons) => {
     Object.keys(sons).forEach(criarDiv);
 }
 
+//atribuimos a cada toque na letra um som.
+const tocarSom = (letra) => {
+    const audio = new Audio (`./sounds/${sons[letra]}`);
+    audio.play();
+}
 
 
 //função que captura o click
-const somOn = (click) =>{
-    const letra = click.target.id //com o target.id capturamos o id que clicamos
+const somOn = (evento) =>{
+    const letra = evento.target.id //com o target.id capturamos o id que clicamos
+    tocarSom(letra);
 }
 
 exibir(sons);
