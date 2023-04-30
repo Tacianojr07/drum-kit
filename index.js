@@ -34,11 +34,11 @@ const tocarSom = (letra) => {
     const audio = new Audio (`./sounds/${sons[letra]}`);
     audio.play();
 }
-
+//função que ativa o efeito ao click
 const ativaEfeito = (letra) => {
     document.getElementById(letra).classList.add('active')
 }
-
+//função que remove o efeito após o funcção da transição do efeito
 const removeEfeito = (letra) => {
     const div = document.getElementById(letra);
     const removeActive = () => {
@@ -49,9 +49,9 @@ const removeEfeito = (letra) => {
 
 //função que captura o click
 const somOn = (evento) =>{
-    const letra = evento.target.id //com o target.id capturamos o id que clicamos
-    const letraPermitida = sons.hasOwnProperty(letra); // validação para que haja um evento só quando uma letra seja criada e quando houver o click no container não exibir erro
+    const letra = evento.type == 'click' ? evento.target.id: evento.key.toUpperCase()
     
+    const letraPermitida = sons.hasOwnProperty(letra); // validação para que haja um evento só quando uma letra seja criada e quando houver o click no container não exibir erro
     if (letraPermitida) {
         ativaEfeito(letra);
         tocarSom(letra); //se letra permitida for igual a verdadeiro executará o som
@@ -59,5 +59,11 @@ const somOn = (evento) =>{
     }
 }
 
+//instanciando o JSON de sons
 exibir(sons);
-document.getElementById('container').addEventListener('click', somOn)
+
+//evento que ativa o som, ativa e remove o efeito ao clicar.
+document.getElementById('container').addEventListener('click', somOn);
+
+//capturando as teclas
+window.addEventListener('keydown', somOn);
